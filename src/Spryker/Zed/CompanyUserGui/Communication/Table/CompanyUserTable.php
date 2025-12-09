@@ -249,7 +249,7 @@ class CompanyUserTable extends AbstractTable
     protected function generateCompanyUserStatusLabel(array $companyUserDataItem): string
     {
         if ($companyUserDataItem[SpyCompanyUserTableMap::COL_IS_ACTIVE]) {
-            return $this->generateLabel('Active', 'label-info');
+            return $this->generateLabel('Active', 'label-primary');
         }
 
         return $this->generateLabel('Disabled', 'label-danger');
