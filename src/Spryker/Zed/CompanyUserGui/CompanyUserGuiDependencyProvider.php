@@ -51,9 +51,13 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
     public const PLUGINS_COMPANY_USER_TABLE_CONFIG_EXPANDER = 'PLUGINS_COMPANY_USER_TABLE_CONFIG_EXPANDER';
 
     /**
+     * @deprecated Use {@link static::PLUGINS_COMPANY_USER_TABLE_BULK_DATA_EXPANDER} instead.
+     *
      * @var string
      */
     public const PLUGINS_COMPANY_USER_TABLE_PREPARE_DATA_EXPANDER = 'PLUGINS_COMPANY_USER_TABLE_PREPARE_DATA_EXPANDER';
+
+    public const string PLUGINS_COMPANY_USER_TABLE_BULK_DATA_EXPANDER = 'PLUGINS_COMPANY_USER_TABLE_BULK_DATA_EXPANDER';
 
     /**
      * @var string
@@ -90,6 +94,7 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         $container = $this->addCompanyUserPropelQuery($container);
         $container = $this->addCompanyUserTableConfigExpanderPlugins($container);
         $container = $this->addCompanyUserTablePrepareDataExpanderPlugins($container);
+        $container = $this->addCompanyUserTableBulkDataExpanderPlugins($container);
         $container = $this->addCompanyUserFormExpanderPlugins($container);
         $container = $this->addCompanyUserAttachCustomerFormExpanderPlugins($container);
         $container = $this->addCompanyUserTableActionExpanderPlugins($container);
@@ -221,6 +226,20 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
      *
      * @return \Spryker\Zed\Kernel\Container
      */
+    protected function addCompanyUserTableBulkDataExpanderPlugins(Container $container): Container
+    {
+        $container->set(static::PLUGINS_COMPANY_USER_TABLE_BULK_DATA_EXPANDER, function (Container $container) {
+            return $this->getCompanyUserTableBulkDataExpanderPlugins();
+        });
+
+        return $container;
+    }
+
+    /**
+     * @param \Spryker\Zed\Kernel\Container $container
+     *
+     * @return \Spryker\Zed\Kernel\Container
+     */
     protected function addCompanyUserTableActionExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_USER_TABLE_ACTION_EXPANDER, function (Container $container) {
@@ -256,6 +275,14 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
      * @return array<\Spryker\Zed\CompanyUserGuiExtension\Dependency\Plugin\CompanyUserTablePrepareDataExpanderPluginInterface>
      */
     protected function getCompanyUserTablePrepareDataExpanderPlugins(): array
+    {
+        return [];
+    }
+
+    /**
+     * @return array<\Spryker\Zed\CompanyUserGuiExtension\Dependency\Plugin\CompanyUserTableBulkDataExpanderPluginInterface>
+     */
+    protected function getCompanyUserTableBulkDataExpanderPlugins(): array
     {
         return [];
     }

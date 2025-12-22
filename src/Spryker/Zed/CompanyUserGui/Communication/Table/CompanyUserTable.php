@@ -171,9 +171,7 @@ class CompanyUserTable extends AbstractTable
 
         $companyUserDataTableRows = [];
         foreach ($companyUserDataItems as $companyUserDataItem) {
-            $companyUserDataTableRow = $this->companyUserTableExpanderPluginExecutor->executePrepareDataExpanderPlugins(
-                $this->mapCompanyUserDataItemToCompanyUserTableDataRow($companyUserDataItem),
-            );
+            $companyUserDataTableRow = $this->mapCompanyUserDataItemToCompanyUserTableDataRow($companyUserDataItem);
 
             $companyUserDataTableRow[CompanyUserGuiConfig::COL_ID_COMPANY_USER] = $this->formatInt(
                 $companyUserDataTableRow[CompanyUserGuiConfig::COL_ID_COMPANY_USER],
@@ -182,7 +180,7 @@ class CompanyUserTable extends AbstractTable
             $companyUserDataTableRows[] = $companyUserDataTableRow;
         }
 
-        return $companyUserDataTableRows;
+        return $this->companyUserTableExpanderPluginExecutor->executeBulkDataExpanderPlugins($companyUserDataTableRows);
     }
 
     /**

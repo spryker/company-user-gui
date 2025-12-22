@@ -19,9 +19,9 @@ interface CompanyUserTableExpanderPluginExecutorInterface
     public function executeConfigExpanderPlugins(TableConfiguration $config): TableConfiguration;
 
     /**
-     * @param array $companyUserDataItem
+     * @param array<array> $companyUserDataTableRows
      *
-     * @return array
+     * @return array<array>
      */
-    public function executePrepareDataExpanderPlugins(array $companyUserDataItem): array;
+    public function executeBulkDataExpanderPlugins(array $companyUserDataTableRows): array;
 }
