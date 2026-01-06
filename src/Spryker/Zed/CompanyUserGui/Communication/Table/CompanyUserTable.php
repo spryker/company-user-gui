@@ -172,15 +172,29 @@ class CompanyUserTable extends AbstractTable
         $companyUserDataTableRows = [];
         foreach ($companyUserDataItems as $companyUserDataItem) {
             $companyUserDataTableRow = $this->mapCompanyUserDataItemToCompanyUserTableDataRow($companyUserDataItem);
-
-            $companyUserDataTableRow[CompanyUserGuiConfig::COL_ID_COMPANY_USER] = $this->formatInt(
-                $companyUserDataTableRow[CompanyUserGuiConfig::COL_ID_COMPANY_USER],
-            );
-
             $companyUserDataTableRows[] = $companyUserDataTableRow;
         }
 
-        return $this->companyUserTableExpanderPluginExecutor->executeBulkDataExpanderPlugins($companyUserDataTableRows);
+        $companyUserDataTableRows = $this->companyUserTableExpanderPluginExecutor->executeBulkDataExpanderPlugins($companyUserDataTableRows);
+        $companyUserDataTableRows = $this->formatCompanyUserIdColumn($companyUserDataTableRows);
+
+        return $companyUserDataTableRows;
+    }
+
+    /**
+     * @param array<array<string, mixed>> $companyUserDataTableRows
+     *
+     * @return array<array<string, mixed>>
+     */
+    protected function formatCompanyUserIdColumn(array $companyUserDataTableRows): array
+    {
+        foreach ($companyUserDataTableRows as $index => $companyUserDataTableRow) {
+            $companyUserDataTableRows[$index][CompanyUserGuiConfig::COL_ID_COMPANY_USER] = $this->formatInt(
+                $companyUserDataTableRow[CompanyUserGuiConfig::COL_ID_COMPANY_USER],
+            );
+        }
+
+        return $companyUserDataTableRows;
     }
 
     /**
