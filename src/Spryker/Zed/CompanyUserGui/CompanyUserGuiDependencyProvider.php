@@ -79,11 +79,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const PLUGIN_COMPANY_USER_TABLE_DELETE_ACTION = 'PLUGIN_COMPANY_USER_TABLE_DELETE_ACTION';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -103,11 +98,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY_USER, function (Container $container) {
@@ -119,11 +109,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY, function (Container $container) {
@@ -135,11 +120,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCustomerFacade(Container $container): Container
     {
         $container->set(static::FACADE_CUSTOMER, function (Container $container) {
@@ -151,11 +131,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserFormExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_USER_FORM_EXPANDER, function (Container $container) {
@@ -165,11 +140,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_COMPANY_USER, $container->factory(function () {
@@ -179,11 +149,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserTableConfigExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_USER_TABLE_CONFIG_EXPANDER, function (Container $container) {
@@ -193,11 +158,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserAttachCustomerFormExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_USER_ATTACH_CUSTOMER_FORM_EXPANDER, function (Container $container) {
@@ -207,11 +167,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserTablePrepareDataExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_USER_TABLE_PREPARE_DATA_EXPANDER, function (Container $container) {
@@ -221,11 +176,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserTableBulkDataExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_USER_TABLE_BULK_DATA_EXPANDER, function (Container $container) {
@@ -235,11 +185,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserTableActionExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_USER_TABLE_ACTION_EXPANDER, function (Container $container) {
@@ -249,11 +194,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUserTableDeleteActionPlugin(Container $container): Container
     {
         $container->set(static::PLUGIN_COMPANY_USER_TABLE_DELETE_ACTION, function (Container $container) {
@@ -311,9 +251,6 @@ class CompanyUserGuiDependencyProvider extends AbstractBundleDependencyProvider
         return [];
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGuiExtension\Dependency\Plugin\CompanyUserTableDeleteActionPluginInterface|null
-     */
     protected function getCompanyUserTableDeleteActionPlugin(): ?CompanyUserTableDeleteActionPluginInterface
     {
         return null;

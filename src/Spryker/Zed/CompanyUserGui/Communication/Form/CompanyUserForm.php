@@ -30,19 +30,11 @@ class CompanyUserForm extends AbstractType
      */
     public const FIELD_FK_COMPANY = 'fk_company';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'company-user';
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefined(CompanyUserCustomerForm::OPTION_SALUTATION_CHOICES);

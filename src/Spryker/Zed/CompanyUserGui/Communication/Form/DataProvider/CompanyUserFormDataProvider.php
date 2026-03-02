@@ -25,10 +25,6 @@ class CompanyUserFormDataProvider
      */
     protected $companyFacade;
 
-    /**
-     * @param \Spryker\Zed\CompanyUserGui\Dependency\Facade\CompanyUserGuiToCompanyUserFacadeInterface $companyUserFacade
-     * @param \Spryker\Zed\CompanyUserGui\Dependency\Facade\CompanyUserGuiToCompanyFacadeInterface $companyFacade
-     */
     public function __construct(
         CompanyUserGuiToCompanyUserFacadeInterface $companyUserFacade,
         CompanyUserGuiToCompanyFacadeInterface $companyFacade
@@ -37,11 +33,6 @@ class CompanyUserFormDataProvider
         $this->companyFacade = $companyFacade;
     }
 
-    /**
-     * @param int|null $idCompanyUser
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function getData(?int $idCompanyUser = null): CompanyUserTransfer
     {
         return $this->getCompanyUserTransfer($idCompanyUser);
@@ -73,11 +64,6 @@ class CompanyUserFormDataProvider
         return $companyChoices;
     }
 
-    /**
-     * @param int|null $idCompanyUser
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     protected function getCompanyUserTransfer(?int $idCompanyUser = null): CompanyUserTransfer
     {
         $companyUserTransfer = new CompanyUserTransfer();
@@ -89,9 +75,6 @@ class CompanyUserFormDataProvider
         return $this->companyUserFacade->findCompanyUserById($idCompanyUser) ?? $companyUserTransfer;
     }
 
-    /**
-     * @return array
-     */
     protected function getSalutationChoices(): array
     {
         $salutationSet = SpyCustomerTableMap::getValueSet(SpyCustomerTableMap::COL_SALUTATION);
@@ -99,9 +82,6 @@ class CompanyUserFormDataProvider
         return array_combine($salutationSet, $salutationSet);
     }
 
-    /**
-     * @return array
-     */
     protected function getGenderChoices(): array
     {
         $genderSet = SpyCustomerTableMap::getValueSet(SpyCustomerTableMap::COL_GENDER);

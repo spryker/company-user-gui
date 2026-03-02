@@ -120,11 +120,6 @@ class CompanyUserTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function addStatusConfigHeader(TableConfiguration $config): TableConfiguration
     {
         $configHeader = $config->getHeader();
@@ -141,11 +136,6 @@ class CompanyUserTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function addActionsConfigHeader(TableConfiguration $config): TableConfiguration
     {
         $configHeader = $config->getHeader();
@@ -197,11 +187,6 @@ class CompanyUserTable extends AbstractTable
         return $companyUserDataTableRows;
     }
 
-    /**
-     * @param array $companyUserDataItem
-     *
-     * @return array
-     */
     protected function mapCompanyUserDataItemToCompanyUserTableDataRow(array $companyUserDataItem): array
     {
         return [
@@ -235,11 +220,6 @@ class CompanyUserTable extends AbstractTable
             ->withColumn(SpyCompanyTableMap::COL_NAME, static::COL_COMPANY_NAME);
     }
 
-    /**
-     * @param array $companyUserDataItem
-     *
-     * @return string
-     */
     protected function buildLinks(array $companyUserDataItem): string
     {
         $actionButtons = [
@@ -253,11 +233,6 @@ class CompanyUserTable extends AbstractTable
         return implode(' ', $actionButtons);
     }
 
-    /**
-     * @param array $companyUserDataItem
-     *
-     * @return string
-     */
     protected function generateCompanyUserStatusLabel(array $companyUserDataItem): string
     {
         if ($companyUserDataItem[SpyCompanyUserTableMap::COL_IS_ACTIVE]) {
@@ -267,11 +242,6 @@ class CompanyUserTable extends AbstractTable
         return $this->generateLabel('Disabled', 'label-danger');
     }
 
-    /**
-     * @param array $companyUserDataItem
-     *
-     * @return string
-     */
     protected function generateCompanyUserEditButton(array $companyUserDataItem): string
     {
         return $this->generateEditButton(
@@ -282,11 +252,6 @@ class CompanyUserTable extends AbstractTable
         );
     }
 
-    /**
-     * @param array $companyUserDataItem
-     *
-     * @return string
-     */
     protected function generateCompanyUserStatusChangeButton(array $companyUserDataItem): string
     {
         if ($companyUserDataItem[SpyCompanyUserTableMap::COL_IS_ACTIVE]) {
@@ -312,11 +277,6 @@ class CompanyUserTable extends AbstractTable
         );
     }
 
-    /**
-     * @param array $companyUserDataItem
-     *
-     * @return string
-     */
     protected function generateCompanyUserDeleteButton(array $companyUserDataItem): string
     {
         $deleteUrl = CompanyUserGuiConfig::URL_CONFIRM_DELETE_COMPANY_USER;

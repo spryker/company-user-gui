@@ -23,12 +23,6 @@ class CompanyUserGuiButtonCreator implements CompanyUserGuiButtonCreatorInterfac
      */
     protected const BUTTON_ATTACH_CUSTOMER_TO_COMPANY_TITLE = 'Attach to company';
 
-    /**
-     * @param int $idCustomer
-     * @param array $buttons
-     *
-     * @return array
-     */
     public function addAttachCustomerButton(int $idCustomer, array $buttons): array
     {
         $defaultOptions = [

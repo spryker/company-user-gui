@@ -30,11 +30,6 @@ class CustomerCompanyAttachFormDataProvider
      */
     protected $customerFacade;
 
-    /**
-     * @param \Spryker\Zed\CompanyUserGui\Dependency\Facade\CompanyUserGuiToCompanyUserFacadeInterface $companyUserFacade
-     * @param \Spryker\Zed\CompanyUserGui\Dependency\Facade\CompanyUserGuiToCompanyFacadeInterface $companyFacade
-     * @param \Spryker\Zed\CompanyUserGui\Dependency\Facade\CompanyUserGuiToCustomerFacadeInterface $customerFacade
-     */
     public function __construct(
         CompanyUserGuiToCompanyUserFacadeInterface $companyUserFacade,
         CompanyUserGuiToCompanyFacadeInterface $companyFacade,
@@ -45,11 +40,6 @@ class CustomerCompanyAttachFormDataProvider
         $this->customerFacade = $customerFacade;
     }
 
-    /**
-     * @param int $idCustomer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function getData(int $idCustomer): CompanyUserTransfer
     {
         $customerTransfer = (new CustomerTransfer())

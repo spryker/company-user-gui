@@ -28,71 +28,36 @@ class CompanyUserGuiToCompanyUserFacadeBridge implements CompanyUserGuiToCompany
         $this->companyUserFacade = $companyUserFacade;
     }
 
-    /**
-     * @param int $idCompanyUser
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function getCompanyUserById(int $idCompanyUser): CompanyUserTransfer
     {
         return $this->companyUserFacade->getCompanyUserById($idCompanyUser);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserResponseTransfer
-     */
     public function update(CompanyUserTransfer $companyUserTransfer): CompanyUserResponseTransfer
     {
         return $this->companyUserFacade->update($companyUserTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserResponseTransfer
-     */
     public function create(CompanyUserTransfer $companyUserTransfer): CompanyUserResponseTransfer
     {
         return $this->companyUserFacade->create($companyUserTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserResponseTransfer
-     */
     public function enableCompanyUser(CompanyUserTransfer $companyUserTransfer): CompanyUserResponseTransfer
     {
         return $this->companyUserFacade->enableCompanyUser($companyUserTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserResponseTransfer
-     */
     public function delete(CompanyUserTransfer $companyUserTransfer): CompanyUserResponseTransfer
     {
         return $this->companyUserFacade->delete($companyUserTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserResponseTransfer
-     */
     public function disableCompanyUser(CompanyUserTransfer $companyUserTransfer): CompanyUserResponseTransfer
     {
         return $this->companyUserFacade->disableCompanyUser($companyUserTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserCriteriaFilterTransfer $companyUserCriteriaFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserCollectionTransfer
-     */
     public function getCompanyUserCollection(
         CompanyUserCriteriaFilterTransfer $companyUserCriteriaFilterTransfer
     ): CompanyUserCollectionTransfer {
@@ -100,21 +65,11 @@ class CompanyUserGuiToCompanyUserFacadeBridge implements CompanyUserGuiToCompany
             ->getCompanyUserCollection($companyUserCriteriaFilterTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return int
-     */
     public function countActiveCompanyUsersByIdCustomer(CustomerTransfer $customerTransfer): int
     {
         return $this->companyUserFacade->countActiveCompanyUsersByIdCustomer($customerTransfer);
     }
 
-    /**
-     * @param int $idCompanyUser
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer|null
-     */
     public function findCompanyUserById(int $idCompanyUser): ?CompanyUserTransfer
     {
         return $this->companyUserFacade->findCompanyUserById($idCompanyUser);

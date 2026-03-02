@@ -103,19 +103,11 @@ class CompanyUserCustomerForm extends AbstractType
      */
     protected const PATTERN_LAST_NAME = '/^[^:\/<>]+$/';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'customer';
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefined(static::OPTION_SALUTATION_CHOICES);
@@ -300,9 +292,6 @@ class CompanyUserCustomerForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @return array
-     */
     protected function createEmailConstraints(): array
     {
         $emailConstraints = [
@@ -323,25 +312,16 @@ class CompanyUserCustomerForm extends AbstractType
         return $emailConstraints;
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraints\NotBlank
-     */
     protected function createNotBlankConstraint(): NotBlank
     {
         return new NotBlank();
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraints\Length
-     */
     protected function createLengthConstraint(): Length
     {
         return new Length(['max' => 100]);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraints\Regex
-     */
     protected function createFirstNameRegexConstraint(): Regex
     {
         return new Regex([
@@ -349,9 +329,6 @@ class CompanyUserCustomerForm extends AbstractType
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraints\Regex
-     */
     protected function createLastNameRegexConstraint(): Regex
     {
         return new Regex([
@@ -359,9 +336,6 @@ class CompanyUserCustomerForm extends AbstractType
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\Form\CallbackTransformer
-     */
     protected function createDateTimeModelTransformer(): CallbackTransformer
     {
         return new CallbackTransformer(

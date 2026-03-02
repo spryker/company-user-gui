@@ -11,8 +11,5 @@ use Generated\Shared\Transfer\CompanyCollectionTransfer;
 
 interface CompanyUserGuiToCompanyFacadeInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\CompanyCollectionTransfer
-     */
     public function getCompanies(): CompanyCollectionTransfer;
 }

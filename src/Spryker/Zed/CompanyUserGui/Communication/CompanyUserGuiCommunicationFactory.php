@@ -57,9 +57,6 @@ class CompanyUserGuiCommunicationFactory extends AbstractCommunicationFactory
         return $this->getFormFactory()->create(CompanyUserEditForm::class, $data, $options);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGui\Communication\Form\DataProvider\CompanyUserFormDataProvider
-     */
     public function createCompanyUserFormDataProvider(): CompanyUserFormDataProvider
     {
         return new CompanyUserFormDataProvider(
@@ -68,33 +65,21 @@ class CompanyUserGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGui\Communication\ButtonCreator\CompanyUserGuiButtonCreatorInterface
-     */
     public function createCompanyUserGuiButtonCreator(): CompanyUserGuiButtonCreatorInterface
     {
         return new CompanyUserGuiButtonCreator();
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGui\Dependency\Facade\CompanyUserGuiToCompanyUserFacadeInterface
-     */
     public function getCompanyUserFacade(): CompanyUserGuiToCompanyUserFacadeInterface
     {
         return $this->getProvidedDependency(CompanyUserGuiDependencyProvider::FACADE_COMPANY_USER);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGui\Dependency\Facade\CompanyUserGuiToCompanyFacadeInterface
-     */
     public function getCompanyFacade(): CompanyUserGuiToCompanyFacadeInterface
     {
         return $this->getProvidedDependency(CompanyUserGuiDependencyProvider::FACADE_COMPANY);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGui\Communication\Form\DataProvider\CustomerCompanyAttachFormDataProvider
-     */
     public function createCustomerCompanyAttachFormDataProvider(): CustomerCompanyAttachFormDataProvider
     {
         return new CustomerCompanyAttachFormDataProvider(
@@ -104,9 +89,6 @@ class CompanyUserGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGui\Dependency\Facade\CompanyUserGuiToCustomerFacadeInterface
-     */
     public function getCustomerFacade(): CompanyUserGuiToCustomerFacadeInterface
     {
         return $this->getProvidedDependency(CompanyUserGuiDependencyProvider::FACADE_CUSTOMER);
@@ -120,17 +102,11 @@ class CompanyUserGuiCommunicationFactory extends AbstractCommunicationFactory
         return $this->getProvidedDependency(CompanyUserGuiDependencyProvider::PLUGINS_COMPANY_USER_FORM_EXPANDER);
     }
 
-    /**
-     * @return \Orm\Zed\CompanyUser\Persistence\SpyCompanyUserQuery
-     */
     public function getCompanyUserPropelQuery(): SpyCompanyUserQuery
     {
         return $this->getProvidedDependency(CompanyUserGuiDependencyProvider::PROPEL_QUERY_COMPANY_USER);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGui\Communication\Table\PluginExecutor\CompanyUserTableExpanderPluginExecutorInterface
-     */
     public function createCompanyUserTableExpanderPluginExecutor(): CompanyUserTableExpanderPluginExecutorInterface
     {
         return new CompanyUserTableExpanderPluginExecutor(
@@ -159,9 +135,6 @@ class CompanyUserGuiCommunicationFactory extends AbstractCommunicationFactory
         return $this->getProvidedDependency(CompanyUserGuiDependencyProvider::PLUGINS_COMPANY_USER_ATTACH_CUSTOMER_FORM_EXPANDER);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGui\Communication\Table\CompanyUserTable
-     */
     public function createCompanyUserTable(): CompanyUserTable
     {
         return new CompanyUserTable(
@@ -172,25 +145,16 @@ class CompanyUserGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createEnableCompanyUserForm(): FormInterface
     {
         return $this->getFormFactory()->create(EnableCompanyUserForm::class);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createDisableCompanyUserForm(): FormInterface
     {
         return $this->getFormFactory()->create(DisableCompanyUserForm::class);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createDeleteCompanyUserForm(): FormInterface
     {
         return $this->getFormFactory()->create(DeleteCompanyUserForm::class);
@@ -228,9 +192,6 @@ class CompanyUserGuiCommunicationFactory extends AbstractCommunicationFactory
         return $this->getProvidedDependency(CompanyUserGuiDependencyProvider::PLUGINS_COMPANY_USER_TABLE_ACTION_EXPANDER);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUserGuiExtension\Dependency\Plugin\CompanyUserTableDeleteActionPluginInterface|null
-     */
     public function getCompanyUserTableDeleteActionPlugin(): ?CompanyUserTableDeleteActionPluginInterface
     {
         return $this->getProvidedDependency(CompanyUserGuiDependencyProvider::PLUGIN_COMPANY_USER_TABLE_DELETE_ACTION);

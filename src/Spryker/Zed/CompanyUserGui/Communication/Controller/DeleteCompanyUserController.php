@@ -33,11 +33,6 @@ class DeleteCompanyUserController extends AbstractController
      */
     protected const URL_REDIRECT_COMPANY_USER_PAGE = '/company-user-gui/list-company-user';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     public function confirmDeleteAction(Request $request): array
     {
         $idCompanyUser = $request->query->getInt(CompanyUserGuiConfig::PARAM_ID_COMPANY_USER);
@@ -59,11 +54,6 @@ class DeleteCompanyUserController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function deleteAction(Request $request): RedirectResponse
     {
         $deleteForm = $this->getFactory()->createDeleteCompanyUserForm()->handleRequest($request);

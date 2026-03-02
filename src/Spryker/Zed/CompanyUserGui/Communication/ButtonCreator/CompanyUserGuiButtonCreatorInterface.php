@@ -9,11 +9,5 @@ namespace Spryker\Zed\CompanyUserGui\Communication\ButtonCreator;
 
 interface CompanyUserGuiButtonCreatorInterface
 {
-    /**
-     * @param int $idCustomer
-     * @param array $buttons
-     *
-     * @return array
-     */
     public function addAttachCustomerButton(int $idCustomer, array $buttons): array;
 }

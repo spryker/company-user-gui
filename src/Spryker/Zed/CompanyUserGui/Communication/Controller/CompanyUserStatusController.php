@@ -43,11 +43,6 @@ class CompanyUserStatusController extends AbstractController
      */
     protected const MESSAGE_ERROR_COMPANY_USER_DISABLE = 'Company user cannot be disabled';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function enableCompanyUserAction(Request $request): RedirectResponse
     {
         $form = $this->getFactory()->createEnableCompanyUserForm()->handleRequest($request);
@@ -83,11 +78,6 @@ class CompanyUserStatusController extends AbstractController
         return $this->redirectResponse(static::URL_REDIRECT_COMPANY_USER_PAGE);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function disableCompanyUserAction(Request $request): RedirectResponse
     {
         $form = $this->getFactory()->createDisableCompanyUserForm()->handleRequest($request);

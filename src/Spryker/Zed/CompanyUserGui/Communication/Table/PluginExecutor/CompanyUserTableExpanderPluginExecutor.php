@@ -35,11 +35,6 @@ class CompanyUserTableExpanderPluginExecutor implements CompanyUserTableExpander
         $this->companyUserTablePrepareDataExpanderPlugins = $companyUserTablePrepareDataExpanderPlugins;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     public function executeConfigExpanderPlugins(TableConfiguration $config): TableConfiguration
     {
         foreach ($this->companyUserTableConfigExpanderPlugins as $companyUserTableConfigExpanderPlugin) {
@@ -67,11 +62,6 @@ class CompanyUserTableExpanderPluginExecutor implements CompanyUserTableExpander
         return $companyUserDataTableRows;
     }
 
-    /**
-     * @param array $companyUserDataItem
-     *
-     * @return array
-     */
     protected function executePrepareDataExpanderPlugins(array $companyUserDataItem): array
     {
         foreach ($this->companyUserTablePrepareDataExpanderPlugins as $companyUserTablePrepareDataExpanderPlugin) {

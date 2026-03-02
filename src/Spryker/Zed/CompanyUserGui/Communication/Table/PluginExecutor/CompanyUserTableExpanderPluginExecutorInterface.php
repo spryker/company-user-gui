@@ -11,11 +11,6 @@ use Spryker\Zed\Gui\Communication\Table\TableConfiguration;
 
 interface CompanyUserTableExpanderPluginExecutorInterface
 {
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     public function executeConfigExpanderPlugins(TableConfiguration $config): TableConfiguration;
 
     /**
