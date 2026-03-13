@@ -222,13 +222,16 @@ class CompanyUserTable extends AbstractTable
 
     protected function buildLinks(array $companyUserDataItem): string
     {
+        $statusButton = $this->generateCompanyUserStatusChangeButton($companyUserDataItem);
+        $deleteButton = $this->generateCompanyUserDeleteButton($companyUserDataItem);
+
         $actionButtons = [
             $this->generateCompanyUserEditButton($companyUserDataItem),
-            $this->generateCompanyUserStatusChangeButton($companyUserDataItem),
-            $this->generateCompanyUserDeleteButton($companyUserDataItem),
         ];
 
         $actionButtons = $this->expandLinks($companyUserDataItem, $actionButtons);
+        $actionButtons[] = $statusButton;
+        $actionButtons[] = $deleteButton;
 
         return implode(' ', $actionButtons);
     }
